@@ -4,8 +4,10 @@ import java.util.List;
 public class MyHashTable<K, V> {
     List<LinkedList> myBucketArray;
     int bucketSize;
+
     public MyHashTable() {
     }
+
     public MyHashTable(int bucketSize) {
         this.bucketSize = bucketSize;
         myBucketArray = new ArrayList<>(bucketSize);
@@ -13,6 +15,7 @@ public class MyHashTable<K, V> {
             myBucketArray.add(i, null);
         }
     }
+
     public int getIndex(K key) {
         int index = Math.abs(key.hashCode() % bucketSize);
         return index;
