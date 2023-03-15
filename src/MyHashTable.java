@@ -1,10 +1,9 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class MyMaoNode<K,V> {
-    List<MyLinkedList> myBucketArray;
+public class MyHashTable<K, V> {
+    List<LinkedList> myBucketArray;
     int bucketSize;
-
     public MyHashTable() {
     }
     public MyHashTable(int bucketSize) {
@@ -14,7 +13,6 @@ public class MyMaoNode<K,V> {
             myBucketArray.add(i, null);
         }
     }
-
     public int getIndex(K key) {
         int index = Math.abs(key.hashCode() % bucketSize);
         return index;
@@ -22,45 +20,42 @@ public class MyMaoNode<K,V> {
 
     public void add(K key, V value) {
         int indexValue = getIndex(key);
-        MyLinkedList<K> myLinkedList1 = myBucketArray.get(indexValue);
+        LinkedList<K> myLinkedList1 = myBucketArray.get(indexValue);
         if (myLinkedList1 == null) {
-            MyLinkedList<K> myLinkedList = new MyLinkedList<>();
+            LinkedList<K> myLinkedList = new LinkedList<>();
             INode<K> newNode = new MyMapNode<>(key, value);
             myLinkedList.add(newNode);
             myBucketArray.set(indexValue, myLinkedList);
-        }
-        else {
-            MyMapNode<K,V> searchNode = (MyMapNode<K, V>) myLinkedList1.search(key);
-            if(searchNode != null){
+        } else {
+            MyMapNode<K, V> searchNode = (MyMapNode<K, V>) myLinkedList1.search(key);
+            if (searchNode != null) {
                 searchNode.setValue(value);
-            }
-            else {
-                INode<K> newNode = new MyMapNode<>(key,value);
+            } else {
+                INode<K> newNode = new MyMapNode<>(key, value);
                 myLinkedList1.add(newNode);
             }
         }
 
     }
 
-    public V findFrequency(K key){
+    public V findFrequency(K key) {
         int indexValue = getIndex(key);
-        MyLinkedList<K> myLinkedList1 = myBucketArray.get(indexValue);
-        if (myLinkedList1==null){
-            return  null;
-        }else {
-            MyMapNode<K,V> searchNode = (MyMapNode<K, V>) myLinkedList1.search(key);
-            if (searchNode==null){
+        LinkedList<K> myLinkedList1 = myBucketArray.get(indexValue);
+        if (myLinkedList1 == null) {
+            return null;
+        } else {
+            MyMapNode<K, V> searchNode = (MyMapNode<K, V>) myLinkedList1.search(key);
+            if (searchNode == null) {
                 return null;
-            }else {
+            } else {
                 return searchNode.getValue();
             }
 
         }
     }
 
-    @Override
     public String toString() {
-        return  ""+ myBucketArray ;
+        return "" + myBucketArray;
 
     }
 }
