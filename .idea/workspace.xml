@@ -5,6 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f935f171-6652-432e-a545-502cedf91350" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LinkedList.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MyHashTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyHashTable.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -59,6 +61,14 @@
       <workItem from="1678540603133" duration="2934000" />
       <workItem from="1678912004732" duration="1208000" />
     </task>
+    <task id="LOCAL-00001" summary="Added : Ability to find frequency of words in a large paragraph phrase">
+      <created>1678913888423</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1678913888423</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

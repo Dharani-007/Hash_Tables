@@ -1,4 +1,3 @@
-
 public class LinkedList<K> {
     INode<K> head;
 
